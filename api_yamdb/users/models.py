@@ -41,7 +41,7 @@ class User(AbstractUser):
         verbose_name = 'Пользователь'
 
     def __str__(self):
-        return (self.username, self.role)
+        return f'{self.username}, {self.role}'
 
     @property
     def is_admin(self):

@@ -91,16 +91,16 @@ class TokenView(APIView):
                 username=serializer.data['username']
             )
             if (default_token_generator.check_token(
-                    user, serializer.data['confirmation code'])):
+                    user, serializer.data['confirmation_code'])):
                 token = AccessToken.for_user(user)
                 return Response(
-                    {'token': token}, status=status.HTTP_200_OK
+                    {'token': str(token)}, status=status.HTTP_200_OK
                 )
             return Response(
-                {'confirmation code': 'Неправильный код'},
+                {'confirmation_code': 'Неправильный код'},
                 status=status.HTTP_400_BAD_REQUEST
             )
-        if 'username' or 'confirmation code' not in serializer.data:
+        if 'username' and 'confirmation_code' not in serializer.data:
             return Response(status=status.HTTP_400_BAD_REQUEST)
         return Response(
             serializer.data,

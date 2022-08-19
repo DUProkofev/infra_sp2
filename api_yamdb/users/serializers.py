@@ -60,9 +60,10 @@ class TokenSerializer(serializers.Serializer):
         if not User.objects.filter(username=data['username']).exists():
             raise exceptions.NotFound(
                 f'Пользователь с юзернеймом {data["username"]} не найден')
-        if 'username' or 'confirmation code' not in data:
+        if 'username' and 'confirmation_code' not in data:
             raise serializers.ValidationError(
                 f'Не хватает данных в запросе. {data}')
         if data['username'] == settings.RESERVED_NAME:
             raise serializers.ValidationError(
                 f'Нельзя использовать юзернейм {settings.RESERVED_NAME}')
+        return data
