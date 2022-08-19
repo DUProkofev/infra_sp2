@@ -19,7 +19,7 @@ git clone git@github.com:DUProkofev/infra_sp2.git
 #### 3. Настройки перед запуском
 Перейдите в директорию infra
 ```bash
-cd infra/
+cd infra_sp2/infra/
 ```
 Выполните команды в соответствии с описанием
 ```bash
