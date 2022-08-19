@@ -24,7 +24,6 @@ cd infra_sp2/infra/
 Выполните команды в соответствии с описанием
 ```bash
 touch .env
-echo DB_ENGINE=django.db.backends.postgresql>>.env
 echo DB_NAME=postgres>>.env # или придумайте другое
 echo POSTGRES_USER=postgres>>.env # или придумайте другое
 echo POSTGRES_PASSWORD='придумайте пароль для пользоваетля БД'>>.env
