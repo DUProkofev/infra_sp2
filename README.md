@@ -12,15 +12,15 @@
 Если у вас уже установлены docker и docker-compose, этот шаг можно пропустить, иначе можно воспользоваться официальной [инструкцией](https://docs.docker.com/engine/install/).
 
 #### 2. Клонируйте репозиторий на локальный компьютер
-`bash
+```bash
 git clone git@github.com:DUProkofev/infra_sp2.git
-`
+```
 
 #### 3. Настройки перед запуском
 Перейдите в директорию infra
-`bash
+```bash
 cd infra_sp2/infra/
-`
+```
 Выполните команды в соответствии с описанием
 ```bash
 touch .env
@@ -30,20 +30,20 @@ echo POSTGRES_PASSWORD='<придумайте пароль для пользов
 echo DB_HOST=db>>.env
 echo DB_PORT=5432>>.env
 echo SECRET_KEY = '<секретный ключ проекта>'>>.env
-echo ALLOWED_HOSTS = '<добавьте разрешенные хосты>'>>.env
-echo DEBAG = '<Режим дебага (True or False)>'>>.env
+echo ALLOWED_HOSTS = '<добавьте разрешенные хосты по шаблону хост1, хост2, ..., хостN>'>>.env
+echo DEBUG = '<Режим дебага (True or False)>'>>.env
 ```
 
 #### 4. Запуск контейнеров
-`bash
+```bash
 docker-compose up -d
-`
+```
 
 #### 5. Команды для работы с контейнерами
-`bash
+```bash
 docker-compose start # запуск контейнеров
 docker-compose stop # остановить контейнеры
-`
+```
 
 #### 5. Настройки приложения Django
 ```bash
@@ -52,9 +52,9 @@ docker-compose exec web python manage.py createsuperuser # создание су
 ```
 
 #### Пример инициализации стартовых данных:
-`bash
+```bash
 docker-compose run web python manage.py loaddata fixtures.json
-`
+```
 
 #### Работа с api
 Документация ко всем эндпоинтам описана в [redoc](localhost/admin/)
