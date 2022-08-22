@@ -1,6 +1,6 @@
 import os
 from datetime import timedelta
-from  distutils import strtobool
+from distutils import strtobool
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
