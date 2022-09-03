@@ -57,7 +57,7 @@ docker-compose run web python manage.py loaddata fixtures.json
 ```
 
 #### Работа с api
-Документация ко всем эндпоинтам описана в [redoc](localhost/admin/)
+Документация ко всем эндпоинтам описана в [redoc](localhost/redoc/)
 
 ## Основные использованные технологии
 * python
